@@ -30,7 +30,7 @@ fn main() {
         let mut search_map = HashMap::new();
 
         for search in search_vec {
-            let search_val = match search {
+            match search {
                 "one" | "1" => search_map.insert(search, "1"),
                 "two" | "2" => search_map.insert(search, "2"),
                 "three" | "3" => search_map.insert(search, "3"),
