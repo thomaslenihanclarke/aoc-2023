@@ -7,42 +7,26 @@ fn main() {
     if let Ok(lines) = read_lines("../input.txt") {
         let mut one_star_res_vec = vec![];
         let mut two_star_res_vec = vec![];
-        let search_vec = vec![
-            "one",
-            "two",
-            "three",
-            "four",
-            "five",
-            "six",
-            "seven",
-            "eight",
-            "nine",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-        ];
-        let mut search_map = HashMap::new();
-
-        for search in search_vec {
-            match search {
-                "one" | "1" => search_map.insert(search, "1"),
-                "two" | "2" => search_map.insert(search, "2"),
-                "three" | "3" => search_map.insert(search, "3"),
-                "four" | "4" => search_map.insert(search, "4"),
-                "five" | "5" => search_map.insert(search, "5"),
-                "six" | "6" => search_map.insert(search, "6"),
-                "seven" | "7" => search_map.insert(search, "7"),
-                "eight" | "8" => search_map.insert(search, "8"),
-                "nine" | "9" => search_map.insert(search, "9"),
-                _ => panic!(),
-            };
-        }
+        let search_map = HashMap::from([
+            ("one", "1"),
+            ("two", "2"),
+            ("three", "3"),
+            ("four", "4"),
+            ("five", "5"),
+            ("six", "6"),
+            ("seven", "7"),
+            ("eight", "8"),
+            ("nine", "9"),
+            ("1", "1"),
+            ("2", "2"),
+            ("3", "3"),
+            ("4", "4"),
+            ("5", "5"),
+            ("6", "6"),
+            ("7", "7"),
+            ("8", "8"),
+            ("9", "9"),
+        ]);
 
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
